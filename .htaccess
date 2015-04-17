@@ -1,0 +1,13 @@
+RewriteEngine On
+DirectoryIndex index.cfm
+
+#Ignora arquivos e diretórios
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Ignora outras extensoes
+#RewriteRule ^(!.(\.gif|\.jpg|\.png|\.css|\.js|\.txt|\.cfm|\.htm|\.html)|.+[^/])$ /$1/ [NC,L]
+
+#URLs amigaveis LOGIN/LOGOUT
+RewriteRule ^entrada$ /estudoscf/?gerenciador=pagina.entrada [NC,L]
+RewriteRule ^contato/gerenciar-contatos$ /estudoscf/?gerenciador=contato.gerenciar [NC,L]
